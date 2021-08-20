@@ -10,16 +10,17 @@ simulate execution.
 The ecosystem is pretty new, so it's useful to work on a not-very-old distribution. Ubuntu 20.04 seems
 enough to work with pre-compiled tools without much effort. Some people may prefer/need to work with latest
 tools by compiling everything from sources, we won't explain how to do that here, please refer to other
-sources in that case.
+sources in that case. In the next section we show hot to setup RARS IDE. 
+There many other much more powerful tools than RARS, but they require more work to setup. 
+In case you are interested in those tools, [this document](riscv-tools-setup.md) should explain what the
+options are and how to set them up.
+
 
 ## RARS - the RISC-V Assembler, Simulator, and Runtime
 
 RARS is the recommended way to go if you are just starting and want to get a grasp of the most basic
-things in RISC-V: registers, instructions and assembly syntax. There many other much more powerful
-tools than RARS, but they require more work to setup. In case you are interested in that,
-[this document](riscv-tools-setup.md) should explain the options and how to set them up.
-
-If you have java installed, this is the simplest way to get a quick look of the RISCV ISA. It is a very
+things in RISC-V: registers, instructions and assembly syntax. 
+If you have java installed, RARS is the simplest way to get a quick look of the RISCV ISA. It is a very
 small (1.3mb) and simple all-in-one IDE solution for testing and learning.
 Ideal for checking out how instructions work in RV32/64.
 It includes a text editor with autocompletion, assembler and graphic debugger to step through instructions
@@ -31,10 +32,10 @@ $ java -jar rars_46ab74d.jar
 ```
 
 The GUI is pretty simple and intuitive, you can create an assembly file there and assemble and step. 
-On Ubuntu you can install jave with something like `sudo apt install openjdk-11-jre` (worked on 20.04).
+On Ubuntu you can install java with something like `sudo apt install openjdk-11-jre` (worked on 20.04).
 
 
-# Basics
+# RISC-V Basics
 
 While x86 has a Complex Instruction Set Computer (CISC) design, RISC-V (pronounded "risk five") is a Reduced Instruction Set Computer design.
 That means, among other things, that you have an optimized amount instructions, as few and as regular as possible.
