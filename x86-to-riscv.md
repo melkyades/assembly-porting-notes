@@ -56,28 +56,28 @@ dealing with RISC-V C ABI. For example, `x2` is used to store the stack pointer,
 
 
 ```
-Reg  ABI Name    Usage                         saved by     more info, comparison to x86
- x0     zero       hard-wired zero              -           does not exist
- x1       ra         return address             caller      used for calls (`jal` and `jalr` in RISC-V terminology),
-                                                            instead of directly pushing to stack. See more later.  
- x2       sp         stack pointer              calle       equivalent to `rsp`
- x3       gp         global pointer             fixed       for global data, constants and static variables
- x4       tp         thread pointer             fixed       for thread local data, similar to `fs` and `gs` registers in `x86`.
- x5       t0         temporary 0                caller
- x6       t1         temporary 1                caller
- x7       t2         temporary 2                caller
- x8    fp/s0         frame pointer              callee      equivalent to `rbp`
- x9       s1         saved reg1                 callee
-x10       a0         1st argument/1st retval    caller      in `x86` 1st ret value goes in `rax`, first arg in `rdi` (linux)/`rcx`(win) 
-x11       a1         2nd argument/2nd retval    caller      in `x86` 2nd ret value goes in `rdx`, first arg in `rsi` (linux)/`rdx`(win) 
+Reg  ABI Name      Usage                    saved by    more info, comparison to x86
+ x0     zero     hard-wired zero              -         does not exist in x86
+ x1       ra     return address             caller      used for calls (`jal` and `jalr` in RISC-V terminology),
+                                                        instead of directly pushing to stack. See more later.  
+ x2       sp     stack pointer              calle       equivalent to `rsp`
+ x3       gp     global pointer             fixed       for global data, constants and static variables
+ x4       tp     thread pointer             fixed       for thread local data, similar to `fs` and `gs` registers in `x86`.
+ x5       t0     temporary 0                caller
+ x6       t1     temporary 1                caller
+ x7       t2     temporary 2                caller
+ x8    fp/s0     frame pointer              callee      equivalent to `rbp`
+ x9       s1     saved reg1                 callee
+x10       a0     1st argument/1st retval    caller      in `x86` 1st ret value goes in `rax`, first arg in `rdi` (linux)/`rcx`(win) 
+x11       a1     2nd argument/2nd retval    caller      in `x86` 2nd ret value goes in `rdx`, first arg in `rsi` (linux)/`rdx`(win) 
 ...
-x17       a7         7th argument               caller
-x18       s2         saved reg0                 callee
+x17       a7     7th argument               caller
+x18       s2     saved reg0                 callee
 ...
-x27      s11         saved reg11                callee
-x28       t3         temporary 3                caller
+x27      s11     saved reg11                callee
+x28       t3     temporary 3                caller
 ...
-x31       t6         temporary 6                caller
+x31       t6     temporary 6                caller
 ```
 
 # RISCV Assembly and Instructions
